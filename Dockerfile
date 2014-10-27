@@ -9,10 +9,6 @@ RUN DEBIAN_FRONTEND=noninteractive \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/
 
-RUN a2enmod rewrite
-RUN a2enmod ssl
-RUN a2ensite default-ssl
-
 # https://bugs.launchpad.net/ubuntu/+source/apache2/+bug/603211
 RUN mkdir -p /var/run/apache2
 
