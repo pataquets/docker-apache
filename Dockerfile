@@ -13,7 +13,6 @@ RUN DEBIAN_FRONTEND=noninteractive \
 RUN mkdir -p /var/run/apache2
 
 VOLUME [ "/var/log/apache2" ]
-VOLUME [ "/var/www" ]
 
 EXPOSE 80 443
 
