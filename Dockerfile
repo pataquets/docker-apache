@@ -21,4 +21,5 @@ ENV APACHE_RUN_GROUP	www-data
 ENV APACHE_LOG_DIR	/var/log/apache2/
 ENV APACHE_RUN_DIR	/var/run
 
+WORKDIR /var/www
 CMD [ "apache2", "-D", "FOREGROUND", "-c", "ErrorLog |more", "-c", "LogLevel warn" ]
