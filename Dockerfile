@@ -1,16 +1,18 @@
 FROM pataquets/ubuntu:precise
 
-RUN DEBIAN_FRONTEND=noninteractive \
+RUN \
 	apt-get update && \
-	apt-get -y upgrade && \
-	apt-get -y install \
-		apache2 \
+	DEBIAN_FRONTEND=noninteractive \
+		apt-get -y upgrade && \
+	DEBIAN_FRONTEND=noninteractive \
+		apt-get -y install \
+			apache2 \
 	&& \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/
 
 # https://bugs.launchpad.net/ubuntu/+source/apache2/+bug/603211
-RUN mkdir -p /var/run/apache2
+RUN mkdir -vp /var/run/apache2
 
 VOLUME [ "/var/log/apache2" ]
 
