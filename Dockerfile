@@ -25,4 +25,4 @@ ENV APACHE_RUN_DIR	/var/run
 ENV APACHE_PID_FILE	/var/run/apache2.pid
 
 WORKDIR /var/www
-CMD [ "apache2", "-D", "FOREGROUND", "-c", "ErrorLog |more", "-c", "LogLevel warn" ]
+CMD [ "apache2", "-D", "FOREGROUND", "-c", "ErrorLog /dev/stdout", "-c", "LogLevel warn" ]
