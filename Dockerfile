@@ -1,15 +1,15 @@
 FROM pataquets/ubuntu:precise
 
 RUN \
-	apt-get update && \
-	DEBIAN_FRONTEND=noninteractive \
-		apt-get -y upgrade && \
-	DEBIAN_FRONTEND=noninteractive \
-		apt-get -y install \
-			apache2 \
-	&& \
-	apt-get clean && \
-	rm -rf /var/lib/apt/lists/
+  apt-get update && \
+  DEBIAN_FRONTEND=noninteractive \
+    apt-get -y upgrade && \
+  DEBIAN_FRONTEND=noninteractive \
+    apt-get -y install \
+      apache2 \
+  && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/
 
 # https://bugs.launchpad.net/ubuntu/+source/apache2/+bug/603211
 RUN mkdir -vp /var/run/apache2
