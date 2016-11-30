@@ -30,7 +30,7 @@ RUN \
   mkdir -vp ${APACHE_LOG_DIR} && \
   mkdir -vp ${APACHE_LOCK_DIR} && \
   rm -v ${APACHE_LOG_DIR}/access.log && \
-  ln -s /dev/stdout ${APACHE_LOG_DIR}/access.log
+  ln -vs /dev/stdout ${APACHE_LOG_DIR}/access.log
 
 RUN \
   sed -i 's/Require local/Order Deny,Allow\n\t\tAllow from All\n\t\t#Require local/' /etc/apache2/mods-available/status.conf
